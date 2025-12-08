@@ -5,7 +5,7 @@
 # Note to students: You dont need to fully understand this! 
 
 main.out:
-	gcc main.c funcs.c -o main.out -lm
+	gcc main.c owner.c client.c -o main.out
 
 clean:
 	-rm main.out
