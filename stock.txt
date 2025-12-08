@@ -1,0 +1,10 @@
+item quantity price
+soda 6 2.50
+crisps 30 1.00
+chocolate 39 3.40
+water 48 0.50
+protein-bar 17 2.50
+energy-drink 35 2.75
+pringles 48 2.20
+bubblegum 20 0.40
+roasted-peanuts 20 1.60
