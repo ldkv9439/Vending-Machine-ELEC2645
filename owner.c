@@ -69,27 +69,24 @@ int authorize(void)
 {
     // check if entered password matches data
     char inputString[MAX] = {};
-
-    FILE *pass = fopen("password.txt", "r");
-    if (!pass)
-    {
-        printf("Error opening file.\n");
-        return 0;
-    }
-    char password[MAX];
-    fgets(password, MAX, pass);
-    fclose(pass);
-
-    // strip newline from password
-    int len = strlen(password);
-    if (password[len - 1] == '\n')
-        password[len - 1] = '\0';
-
-    int match = 1;
     int retry = 3;
 
     while (retry > 0)
-    {
+    {   FILE *pass = fopen("password.txt", "r");
+        if (!pass){
+        printf("Error opening file.\n");
+        return 0;}
+    
+        char password[MAX];
+        fgets(password, MAX, pass);
+        fclose(pass);
+
+        // strip newline from password
+        int len = strlen(password);
+        if (password[len - 1] == '\n')
+        password[len - 1] = '\0';
+    
+        int match = 1;
         int count = 0;
         printf("Enter your password: \nTries Remaining = %d \n", retry);
         fgets(inputString, sizeof(inputString), stdin);
@@ -114,7 +111,7 @@ int authorize(void)
             return 1;
         }
         else
-        {
+        {   
             printf("Try Again! :( \n\n");
             retry = retry - 1;
         }
