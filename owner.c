@@ -211,6 +211,7 @@ void add_stock()
     struct item *items = filetostruct(&count);
     // Print stored data
     printf("\nCurrent Stock:\n");
+    printf("Item - Quantity - Price\n\n");
     for (int i = 0; i < count; i++)
     {
         printf("%d. %s - %d - %.2f\n", i + 1, items[i].name, items[i].quantity, items[i].price);
